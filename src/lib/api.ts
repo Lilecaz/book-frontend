@@ -30,4 +30,22 @@ export const fetchBookDetails = async (id: string) => {
   return response.data
 }
 
+type Book = {
+  id: string;
+  title: string;
+  author: string;
+  publishedDate: string;
+  isAvailable: boolean;
+};
+
+export const updateBook = async (id: string, book: Partial<Book>) => {
+  const response = await api.patch(`/books/${id}`, book);
+  return response.data;
+};
+
+export const deleteBook = async (id: string) => {
+  const response = await api.delete(`/books/${id}`);
+  return response.data;
+};
+
 export default api
