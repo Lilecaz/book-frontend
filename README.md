@@ -35,6 +35,7 @@
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
+    - [Before starting](#before-starting)
     - [Usage](#usage)
     - [Testing](#testing)
 
@@ -386,14 +387,15 @@ Build book-frontend from the source and intsall dependencies:
     ```sh
     npm install
     ```
-
+### Before starting
+Make sure you have a running API (https://github.com/Lilecaz/book-api)
 ### Usage
 
 Run the project with:
 
 **Using [npm](https://www.npmjs.com/):**
 ```sh
-npm start
+npm run dev
 ```
 
 ### Testing
