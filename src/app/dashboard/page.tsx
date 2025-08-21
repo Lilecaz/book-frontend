@@ -20,6 +20,7 @@ import {
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { BookOpen, Plus, LogOut, Search, Calendar, User, Loader2, AlertCircle } from "lucide-react"
 import AppHeader from "@/components/AppHeader"
+import AppFooter from "@/components/AppFooter"
 
 interface Book {
     id: string
@@ -345,6 +346,7 @@ export default function Dashboard() {
                     </div>
                 )}
             </main>
+            <AppFooter />
         </div>
     )
 }

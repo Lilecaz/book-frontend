@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Users, Shield, Zap } from "lucide-react"
+import AppFooter from "@/components/AppFooter"
 
 export default function Home() {
   return (
@@ -98,11 +99,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t bg-white/80 backdrop-blur-sm mt-16">
-        <div className="container mx-auto px-4 py-8 text-center text-slate-600">
-          <p>BookAPI</p>
-        </div>
-      </footer>
+      <AppFooter />
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Loader2, BookOpen } from "lucide-react";
 import { fetchBookDetails } from "@/lib/api";
+import AppFooter from "@/components/AppFooter";
 
 interface Book {
     id: string;
@@ -74,6 +75,7 @@ export default function BookDetailsPage() {
                     </Card>
                 )}
             </div>
+            <AppFooter />
         </>
 
     );
