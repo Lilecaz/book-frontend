@@ -100,7 +100,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t bg-white/80 backdrop-blur-sm mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-slate-600">
-          <p>© 2025 BookAPI. Développé avec ❤️ par Celil.</p>
+          <p>BookAPI</p>
         </div>
       </footer>
     </div>
