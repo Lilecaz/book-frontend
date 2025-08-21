@@ -25,4 +25,9 @@ api.interceptors.response.use(
   },
 )
 
+export const fetchBookDetails = async (id: string) => {
+  const response = await api.get(`/books/${id}`)
+  return response.data
+}
+
 export default api

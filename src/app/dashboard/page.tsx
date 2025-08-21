@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/dialog"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { BookOpen, Plus, LogOut, Search, Calendar, User, Loader2, AlertCircle } from "lucide-react"
+import AppHeader from "@/components/AppHeader"
 
 interface Book {
     id: string
@@ -131,18 +132,7 @@ export default function Dashboard() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
             {/* Header */}
-            <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-                <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <BookOpen className="h-8 w-8 text-slate-900" />
-                        <h1 className="text-2xl font-bold text-slate-900">Ma Bibliothèque</h1>
-                    </div>
-                    <Button variant="outline" onClick={handleLogout}>
-                        <LogOut className="h-4 w-4 mr-2" />
-                        Déconnexion
-                    </Button>
-                </div>
-            </header>
+            <AppHeader />
 
             <main className="container mx-auto px-4 py-8">
                 {error && (
@@ -328,7 +318,8 @@ export default function Dashboard() {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredBooks.map((book) => (
-                            <Card key={book.id} className="hover:shadow-lg transition-shadow">
+                            <Card key={book.id} className="hover:shadow-lg transition-shadow" onClick={() => router.push(`/book/${book.id}`)}>
+
                                 <CardHeader>
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1">
