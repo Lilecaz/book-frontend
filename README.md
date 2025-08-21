@@ -26,12 +26,13 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
+- [BOOK-FRONTEND](#book-frontend)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Project Structure](#project-structure)
     - [Project Index](#project-index)
-- [Getting Started](#getting-started)
+  - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Usage](#usage)
@@ -368,13 +369,13 @@ Build book-frontend from the source and intsall dependencies:
 1. **Clone the repository:**
 
     ```sh
-    ❯ git clone https://github.com/Lilecaz/book-frontend
+    git clone https://github.com/Lilecaz/book-frontend
     ```
 
 2. **Navigate to the project directory:**
 
     ```sh
-    ❯ cd book-frontend
+    cd book-frontend
     ```
 
 3. **Install the dependencies:**
@@ -383,7 +384,7 @@ Build book-frontend from the source and intsall dependencies:
     **Using [npm](https://www.npmjs.com/):**
 
     ```sh
-    ❯ npm install
+    npm install
     ```
 
 ### Usage
