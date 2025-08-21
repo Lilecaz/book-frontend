@@ -21,6 +21,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { BookOpen, Plus, LogOut, Search, Calendar, User, Loader2, AlertCircle } from "lucide-react"
 import AppHeader from "@/components/AppHeader"
 import AppFooter from "@/components/AppFooter"
+import Link from "next/link"
 
 interface Book {
     id: string
@@ -319,29 +320,30 @@ export default function Dashboard() {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredBooks.map((book) => (
-                            <Card key={book.id} className="hover:shadow-lg transition-shadow" onClick={() => router.push(`/book/${book.id}`)}>
-
-                                <CardHeader>
-                                    <div className="flex items-start justify-between">
-                                        <div className="flex-1">
-                                            <CardTitle className="text-lg leading-tight mb-2">{book.title}</CardTitle>
-                                            <CardDescription className="flex items-center gap-1">
-                                                <User className="h-4 w-4" />
-                                                {book.author}
-                                            </CardDescription>
+                            <Link href={`/book/${book.id}`} key={book.id} className="no-underline">
+                                <Card key={book.id} className="hover:shadow-lg transition-shadow">
+                                    <CardHeader>
+                                        <div className="flex items-start justify-between">
+                                            <div className="flex-1">
+                                                <CardTitle className="text-lg leading-tight mb-2">{book.title}</CardTitle>
+                                                <CardDescription className="flex items-center gap-1">
+                                                    <User className="h-4 w-4" />
+                                                    {book.author}
+                                                </CardDescription>
+                                            </div>
+                                            <Badge variant={book.isAvailable ? "default" : "secondary"}>
+                                                {book.isAvailable ? "Disponible" : "Indisponible"}
+                                            </Badge>
                                         </div>
-                                        <Badge variant={book.isAvailable ? "default" : "secondary"}>
-                                            {book.isAvailable ? "Disponible" : "Indisponible"}
-                                        </Badge>
-                                    </div>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="flex items-center gap-1 text-sm text-slate-600">
-                                        <Calendar className="h-4 w-4" />
-                                        {new Date(book.publishedDate).toLocaleDateString("fr-FR")}
-                                    </div>
-                                </CardContent>
-                            </Card>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="flex items-center gap-1 text-sm text-slate-600">
+                                            <Calendar className="h-4 w-4" />
+                                            {new Date(book.publishedDate).toLocaleDateString("fr-FR")}
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </Link>
                         ))}
                     </div>
                 )}
